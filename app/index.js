@@ -14,6 +14,7 @@ module.exports = yeoman.generators.Base.extend({
     });
     this.skipWelcome = this.options['skip-welcome-message'];
   },
+  
   prompting: function () {
     var done = this.async();
 
@@ -21,47 +22,21 @@ module.exports = yeoman.generators.Base.extend({
     this.log(yosay(
       'Welcome to the smashing ' + chalk.red('Foundation') + ' generator!'
     ));
-
     var prompts = [{
       type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
+      name: 'createTeplateProject',
+      message: 'Would you like to create example project?',
       default: true
     }];
-
     this.prompt(prompts, function (props) {
       this.props = props;
-      // To access props later use this.props.someOption;
-
       done();
     }.bind(this));
   },
 
   writing: {
-    app: function () {
-      this.fs.copy(
-        this.templatePath('_package.json'),
-        this.destinationPath('package.json')
-      );
-      this.fs.copy(
-        this.templatePath('_bower.json'),
-        this.destinationPath('bower.json')
-      );
-    },
-
     projectfiles: function () {
-      this.fs.copy(
-        this.templatePath('editorconfig'),
-        this.destinationPath('.editorconfig')
-      );
-      this.fs.copy(
-        this.templatePath('jshintrc'),
-        this.destinationPath('.jshintrc')
-      );
     }
-  },
-
-  install: function () {
-    this.installDependencies();
   }
+  
 });
