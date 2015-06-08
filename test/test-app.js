@@ -13,7 +13,20 @@ describe('fzurb:app', function() {
       .on('end', done);
   });
 
-  it('creates files', function() {
-    assert.noFile([]);
+  it('creates project files', function() {
+    assert.file([
+      '.bowerrc',
+      '.gitignore',
+      'bower.json',
+      'Gruntfile.js',
+      'humans.txt',
+      'index.html',
+      'js/app.js',
+      'package.json',
+      'README.md',
+      'robots.txt',
+      'scss/_settings.scss',
+      'scss/app.scss'
+    ]);
   });
 });
