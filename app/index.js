@@ -35,7 +35,25 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   writing: {
-    projectfiles: function () {
+    project: function () {
+      if(this.props.createTeplateProject) {
+        this.fs.copy(
+          this.templatePath('.*'),
+          this.destinationPath('/')
+        );
+        this.fs.copy(
+          this.templatePath('**.*'),
+          this.destinationPath('/')
+        );
+        this.fs.copy(
+          this.templatePath('js/**.*'),
+          this.destinationPath('js/')
+        );
+        this.fs.copy(
+          this.templatePath('scss/**.*'),
+          this.destinationPath('scss/')
+        );
+      }
     }
   }
   
