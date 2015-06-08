@@ -1,45 +1,83 @@
-# generator-fzurb [![Build Status](https://secure.travis-ci.org/peterblazejewicz/generator-fzurb.png?branch=master)](https://travis-ci.org/peterblazejewicz/generator-fzurb)
-
-> [Yeoman](http://yeoman.io) generator
-
+# generator-fzurb
 
 ## Getting Started
-
-### What is Yeoman?
-
-Trick question. It's not a thing. It's this guy:
-
-![](http://i.imgur.com/JHaAlBJ.png)
-
-Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
-
-Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
 
 ```bash
 npm install -g yo
 ```
 
-### Yeoman Generators
+### This generator
 
-Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
+This project is an exercise on how to differently implement existing Zurb Foundation CLI automated project scaffolding. The official one is based on Ruby, why this one uses Node and Yeoman. The scaffolded Zurb Foundation project is using LibSass, so no Ruby dependency. In theory Zurb could just use all Node based tools to scaffold Sass based project without any Ruby dpendency. And that is the purpose of this project
 
-To install generator-fzurb from npm, run:
+> Note: Npm installation won't work
 
 ```bash
 npm install -g generator-fzurb
 ```
-
 Finally, initiate the generator:
 
 ```bash
+mkdir my-project && cd $_
 yo fzurb
+_-----_
+|       |    .--------------------------.
+|--(o)--|    |  Welcome to the smashing |
+`---------´   |   Foundation generator!  |
+( _´U`_ )    '--------------------------'
+/___A___\
+ |  ~  |
+__'.___.'__
+´   `  |° ´ Y `
+
+? Would you like to create example project? Yes
+create bower.json
+create package.json
+create .bowerrc
+create .gitignore
+create Gruntfile.js
+create humans.txt
+create index.html
+create README.md
+create robots.txt
+create js/app.js
+create scss/_settings.scss
+create scss/app.scss
 ```
 
-### Getting To Know Yeoman
+The Foundation (latest) Zurb project is scaffolded:
 
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
+```bash
+├── Gruntfile.js
+├── README.md
+├── bower.json
+├── humans.txt
+├── index.html
+├── js
+│   └── app.js
+├── package.json
+├── robots.txt
+└── scss
+    ├── _settings.scss
+    └── app.scss
+```
 
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
+You can now install dependencies:
+
+```bash
+npm install
+bower install
+```
+
+and start tweaking a project at http://localhost:3000:
+```bash
+grunt
+Running "sass:dist" (sass) task
+
+Running "watch" task
+Waiting...
+```
+
 
 
 ## License
