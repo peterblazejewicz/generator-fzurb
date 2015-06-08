@@ -29,4 +29,11 @@ describe('fzurb:app', function() {
       'scss/app.scss'
     ]);
   });
+
+  it('does not create .git', function() {
+    assert.noFile([
+      '.git'
+    ]);
+  });
+
 });

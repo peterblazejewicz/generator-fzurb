@@ -38,8 +38,12 @@ module.exports = yeoman.generators.Base.extend({
     project: function () {
       if(this.props.createTeplateProject) {
         this.fs.copy(
-          this.templatePath('.*'),
-          this.destinationPath('/')
+          this.templatePath('.bowerrc'),
+          this.destinationPath('.bowerrc')
+        );
+        this.fs.copy(
+          this.templatePath('.gitignore'),
+          this.destinationPath('.gitignore')
         );
         this.fs.copy(
           this.templatePath('**.*'),
